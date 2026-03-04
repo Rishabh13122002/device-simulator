@@ -86,6 +86,7 @@ function DeviceSimulator() {
   const intervalRef = useRef(null);
   const [output, setOutput] = useState(null);
   const [runningDevices, setRunningDevices] = useState({});
+  const url = "https://node-red-flows-production-d273.up.railway.app";
   const validateForm = () => {
     // 1️⃣ Check empty fields
     for (let key in formData) {
@@ -126,7 +127,7 @@ function DeviceSimulator() {
       return;
     }
     try {
-      await fetch("http://localhost:1880/start-simulation", {
+      await fetch(`${url}/start-simulation`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -140,7 +141,7 @@ function DeviceSimulator() {
         async () => {
           try {
             const res = await fetch(
-              `http://localhost:1880/get-simulation/${formData.imei}`,
+              `${url}/get-simulation/${formData.imei}`,
             );
             const data = await res.json();
             console.log(data);
@@ -160,7 +161,7 @@ function DeviceSimulator() {
 
   const handleStop = async () => {
     try {
-      await fetch("http://localhost:1880/stop-simulation", {
+      await fetch(`${url}/stop-simulation`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ imei: formData.imei }),
@@ -178,7 +179,7 @@ function DeviceSimulator() {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const res = await fetch("http://localhost:1880/get-running-devices");
+        const res = await fetch(`${url}/get-running-devices`);
         const data = await res.json();
         setRunningDevices(data);
       } catch (err) {

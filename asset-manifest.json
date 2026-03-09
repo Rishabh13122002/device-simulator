@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/device-simulator/static/css/main.e6c13ad2.css",
-    "main.js": "/device-simulator/static/js/main.0264c557.js",
+    "main.js": "/device-simulator/static/js/main.7f958989.js",
     "static/js/453.59ab468c.chunk.js": "/device-simulator/static/js/453.59ab468c.chunk.js",
     "index.html": "/device-simulator/index.html",
     "main.e6c13ad2.css.map": "/device-simulator/static/css/main.e6c13ad2.css.map",
-    "main.0264c557.js.map": "/device-simulator/static/js/main.0264c557.js.map",
+    "main.7f958989.js.map": "/device-simulator/static/js/main.7f958989.js.map",
     "453.59ab468c.chunk.js.map": "/device-simulator/static/js/453.59ab468c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.0264c557.js"
+    "static/js/main.7f958989.js"
   ]
 }
